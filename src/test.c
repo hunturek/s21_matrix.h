@@ -4,6 +4,7 @@ int main(){
   struct matrix_struct a;
   struct matrix_struct b;
   struct matrix_struct c;
+  struct matrix_struct d;
   struct matrix_struct res;
 
   s21_create_matrix(4, 4, &a);
@@ -27,11 +28,18 @@ int main(){
 
 	printf("\n");
 
+  s21_create_matrix(2, 5, &d);
+  d.matrix[0][1] = 15.2134;
+  d.matrix[0][3] = 0.52563;
+  s21_view_matrix(d);
+
+	printf("\n");
+
   s21_sum_matrix(&a, &b, &res);
   s21_view_matrix(res);
 	printf("\n");
 
-  s21_sub_matrix(&a, &b, &res);
+  /*s21_sub_matrix(&a, &b, &res);
   s21_view_matrix(res);
 	printf("\n");
 
@@ -42,5 +50,9 @@ int main(){
 	s21_transpose(&c, &res);
 	s21_view_matrix(res);
 	printf("\n");
+
+	s21_mult_matrix(&c, &d, &res);
+	s21_view_matrix(res);
+	printf("\n");*/
   return 0;
 }
